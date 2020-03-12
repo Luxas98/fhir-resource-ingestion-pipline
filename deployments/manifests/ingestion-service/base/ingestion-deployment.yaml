@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ingestion-service
+    component: fhir
+  name: ingestion-service
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: ingestion-service
+  template:
+    metadata:
+      labels:
+        app: ingestion-service
+        component: fhir
+    spec:
+      containers:
+      - name: ingestion-service
+        image: eu.gcr.io/test-api-351cef12/ingestion-service
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: ingestion-config
+        resources:
+          requests:
+            cpu: 200m
+            memory: 50Mi
+          limits:
+            cpu: 300m
+            memory: 100Mi

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ingestion-api
+    component: fhir
+  name: ingestion-api
+spec:
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: ingestion-api
+  template:
+    metadata:
+      labels:
+        app: ingestion-api
+        component: fhir
+    spec:
+      containers:
+      - name: fhir-api
+        image: eu.gcr.io/test-api-351cef12/ingestion-api
+        imagePullPolicy: Always
+        command:
+          - /app/entrypoint.sh
+        ports:
+          - name: ingestion-api
+            containerPort: 5000
+        envFrom:
+          - configMapRef:
+              name: ingestion-api-config
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi

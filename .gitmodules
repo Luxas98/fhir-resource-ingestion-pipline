@@ -1,0 +1,3 @@
+[submodule "fhir-fastavro"]
+	path = fhir-fastavro
+	url = git@github.com:Luxas98/fhir-fastavro.git

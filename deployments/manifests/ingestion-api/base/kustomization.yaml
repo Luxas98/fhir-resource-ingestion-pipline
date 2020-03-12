@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: ingestion-api
+
+resources:
+  - namespace.yaml
+  - ingestion-api-config.yaml
+  - ingestion-api-deployment.yaml
+  - ingestion-api-service.yaml

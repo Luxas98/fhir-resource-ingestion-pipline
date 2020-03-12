@@ -1,0 +1,7 @@
+google-cloud-logger==0.2.1
+google-cloud-core==1.0.3
+google-cloud-logging==1.14.0
+pulsar-client
+fastavro
+line_profiler
+minio==5.0.6

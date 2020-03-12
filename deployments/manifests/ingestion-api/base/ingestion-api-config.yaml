@@ -1,0 +1,17 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  labels:
+    app: ingestion-api
+    component: fhir
+  name: ingestion-api-config
+data:
+  GOOGLE_APPLICATION_CREDENTIALS: /etc/secrets/credentials.json
+  ENDPOINTS: ingestion
+  API_ROUTE: "fhir"
+  API_VERSION: "v1"
+  TOPIC_NAME: "fhir-ingestion"
+  PULSAR_ADDRESS: "pulsar-proxy.pulsar:6650"
+  MINIO_HOST: "minio-service.minio:9000"
+  MINIO_ACCESS_KEY: "minio"
+  MINIO_SECRET_KEY: "4dxNP50xDQgYvFwS"
