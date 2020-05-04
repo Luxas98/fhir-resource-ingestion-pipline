@@ -4,3 +4,6 @@
 [submodule "fhirfastavro"]
 	path = fhirfastavro
 	url = https://github.com/Luxas98/fhir-fastavro
+[submodule "pulsarclient"]
+	path = pulsarclient
+	url = https://github.com/Luxas98/pulsarclient
