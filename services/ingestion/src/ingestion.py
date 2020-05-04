@@ -7,7 +7,7 @@ from gcloudlogging.profiling import conditional_decorator
 import io
 from minioclient import upload_file
 import pulsarclient
-import fastavroparsing
+from fhirfastavro import avroutil
 import fastavro
 
 project_id = os.environ.get('PROJECT_ID', 'default')
@@ -67,7 +67,7 @@ def ingestion_callback(message):
 
     log.info(sanitized_data)
 
-    fastavro_schema = fastavroparsing.get_bundle_schema()
+    fastavro_schema = avroutil.get_bundle_schema()
     fastavro_schema = pulsarclient.AvroSchema(schema_definition=fastavro_schema,
                                               schema_name=fastavro_schema[
                                                   'name'])

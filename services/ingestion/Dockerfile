@@ -4,12 +4,12 @@ RUN pip install --upgrade pip
 
 WORKDIR /app
 COPY pulsarclient pulsarclient
-COPY fastavroparsing fastavroparsing
 COPY gcloudlogging gcloudlogging
 COPY minioclient minioclient
 COPY services/ingestion/requirements.txt requirements.txt
 COPY services/ingestion/src/ingestion.py ingestion.py
-COPY fhir-fastavro/schema fhir-fastavro/schema
+COPY fhirfastavro fhirfastavro
+COPY fhirfastavro/schema schema
 
 RUN pip install -r requirements.txt
 

@@ -3,7 +3,7 @@ import os
 import pulsar
 import _pulsar
 import fastavro
-import fastavroparsing
+from fhirfastavro import avroutil
 from pulsar.schema import Schema
 
 pulsar_address = os.environ.get("PULSAR_ADDRESS")
@@ -44,7 +44,7 @@ class AvroSchema(Schema):
 service_url = f"pulsar://{pulsar_address}:6650"
 client = pulsar.Client(service_url)
 
-fastavro_schema = fastavroparsing.get_bundle_schema()
+fastavro_schema = avroutil.get_bundle_schema()
 fastavro_schema = AvroSchema(schema_definition=fastavro_schema,
                                  schema_name=fastavro_schema['name'])
 

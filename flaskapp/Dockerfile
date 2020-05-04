@@ -12,9 +12,9 @@ COPY flaskapp flaskapp
 COPY apimessages apimessages
 COPY gcloudlogging gcloudlogging
 COPY pulsarclient pulsarclient
-COPY fastavroparsing fastavroparsing
+COPY fhirfastavro fhirfastavro
 COPY minioclient minioclient
-COPY fhir-fastavro/schema fhir-fastavro/schema
+COPY fhirfastavro/schema schema
 
 COPY wsgi.py wsgi.py
 COPY manage.py manage.py
