@@ -7,3 +7,6 @@
 [submodule "pulsarclient"]
 	path = pulsarclient
 	url = https://github.com/Luxas98/pulsarclient
+[submodule "minioclient"]
+	path = minioclient
+	url = https://github.com/Luxas98/minioclient
