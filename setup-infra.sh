@@ -6,8 +6,8 @@ CLIENT_NAME=${CLIENT_NAME:=$1}
 REGION=${REGION:=europe-west4}
 ZONE=${ZONE:=a}
 
-TF_VAR_org_id=405354688018
-TF_VAR_billing_account=00DB62-32FF8E-7DCFF1
+TF_VAR_org_id=<ORG_ID>
+TF_VAR_billing_account=<BILLING_ACC_ID>
 
 cd deployments/terraform
 terraform init
